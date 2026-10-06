@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Clean Junk Removal | Worcester, MA | Call/Text 508-840-4362</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: {
+                            DEFAULT: '#15803d',
+                            light: '#22c55e',
+                            dark: '#166534',
+                            deep: '#0f391b',
+                        },
+                        brandOrange: {
+                            DEFAULT: '#ea580c',
+                            light: '#f97316',
+                            hover: '#c2410c',
+                        },
+                        brandDark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Snow particle animation accent for winter ready theme */
+        .snowflake {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1em;
+            position: absolute;
+            top: -20px;
+            animation: fall linear infinite;
+            pointer-events: none;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0.2; }
+        }
+
+        /* Image comparison slider styling */
+        .before-after-container {
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+        }
+        .img-after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .img-before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            clip-path: polygon(0 0, var(--slider-pos, 50%) 0, var(--slider-pos, 50%) 100%, 0 100%);
+        }
+        .slider-divider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: var(--slider-pos, 50%);
+            width: 4px;
+            background-color: #ea580c;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            pointer-events: none;
+        }
+        .slider-handle {
+            position: absolute;
+            top: 50%;
+            left: var(--slider-pos, 50%);
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            background-color: #ea580c;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: ew-resize;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Announcement Banner -->
+    <div class="bg-slate-900 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium border-b border-slate-800 flex items-center justify-center gap-2">
+        <span class="bg-brandOrange text-white text-xs font-bold px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse">Winter Special</span>
+        <span>Get Your Home Winter Ready! Clean out clutter before winter arrives.</span>
+        <a href="#quote-section" class="underline text-brandOrange-light hover:text-white font-semibold ml-2 hidden sm:inline">Book Today &rarr;</a>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-brandDark border-b border-slate-800 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="bg-brandGreen text-white p-2.5 rounded-xl shadow-lg border border-green-500/30 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-truck-ramp-box text-2xl sm:text-3xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-xl sm:text-2xl font-black text-white tracking-tight leading-none uppercase">
+                            ALL CLEAN <span class="text-brandOrange">JUNK REMOVAL</span>
+                        </div>
+                        <div class="text-xs text-brandGreen-light font-semibold tracking-wide flex items-center gap-1 mt-0.5">
+                            <i class="fa-solid fa-location-dot"></i> Serving Worcester & Surrounding Areas
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-200">
+                    <a href="#services" class="hover:text-brandGreen-light transition-colors">Services</a>
+                    <a href="#transformation" class="hover:text-brandGreen-light transition-colors">Before & After</a>
+                    <a href="#why-us" class="hover:text-brandGreen-light transition-colors">Why Choose Us</a>
+                    <a href="#coverage" class="hover:text-brandGreen-light transition-colors">Service Areas</a>
+                    <a href="#reviews" class="hover:text-brandGreen-light transition-colors">Reviews</a>
+                </nav>
+
+                <!-- Phone CTA Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <div class="text-right">
+                        <div class="text-xs text-slate-400 font-medium">Call or Text Anytime</div>
+                        <a href="tel:5088404362" class="text-lg font-extrabold text-white hover:text-brandOrange transition-colors tracking-tight">
+                            508-840-4362
+                        </a>
+                    </div>
+                    <a href="tel:5088404362" class="bg-brandOrange hover:bg-brandOrange-hover text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i> Call Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white text-2xl p-2 focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#services" class="block text-slate-200 hover:text-brandOrange font-medium py-2 border-b border-slate-800">Our Services</a>
+            <a href="#transformation" class="block text-slate-200 hover:text-brandOrange font-medium py-2 border-b border-slate-800">Before & After</a>
+            <a href="#why-us" class="block text-slate-200 hover:text-brandOrange font-medium py-2 border-b border-slate-800">Why Choose Us</a>
+            <a href="#coverage" class="block text-slate-200 hover:text-brandOrange font-medium py-2 border-b border-slate-800">Service Areas</a>
+            <a href="#reviews" class="block text-slate-200 hover:text-brandOrange font-medium py-2 border-b border-slate-800">Reviews</a>
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="tel:5088404362" class="w-full text-center bg-brandOrange text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 text-base">
+                    <i class="fa-solid fa-phone"></i> Call 508-840-4362
+                </a>
+                <a href="sms:5088404362" class="w-full text-center bg-brandGreen text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 text-base">
+                    <i class="fa-solid fa-comment-sms"></i> Text Us 508-840-4362
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Winter Ready Theme -->
+    <section class="relative bg-gradient-to-br from-brandDark via-slate-900 to-slate-950 text-white overflow-hidden py-12 md:py-20">
+        <!-- Decorative subtle background shapes -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brandGreen-dark/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-brandOrange/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Hero Text & Selling Points -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <!-- Winter Badge -->
+                    <div class="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700 text-brandGreen-light px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide shadow-inner">
+                        <i class="fa-regular fa-snowflake text-sky-400"></i>
+                        <span>Winter Prep Campaign</span>
+                        <span class="text-slate-400">•</span>
+                        <span class="text-white font-bold">Fast & Local</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight uppercase">
+                        Get Your Home <br class="hidden sm:inline" />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandOrange to-amber-400">Winter Ready!</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 font-medium max-w-2xl mx-auto lg:mx-0">
+                        Clean out the clutter before winter arrives. Professional junk removal for a cleaner, safer, and more spacious home.
+                    </p>
+
+                    <!-- Key Badges Grid -->
+                    <div class="grid grid-cols-3 gap-3 pt-2 max-w-lg mx-auto lg:mx-0">
+                        <div class="bg-slate-800/60 border border-slate-700/60 p-3 rounded-xl text-center flex flex-col items-center justify-center">
+                            <i class="fa-solid fa-clock text-brandGreen-light text-2xl mb-1"></i>
+                            <span class="text-xs sm:text-sm font-bold text-white">Same Day</span>
+                            <span class="text-[10px] text-slate-400 uppercase">Service</span>
+                        </div>
+                        <div class="bg-slate-800/60 border border-slate-700/60 p-3 rounded-xl text-center flex flex-col items-center justify-center">
+                            <i class="fa-solid fa-tag text-brandOrange text-2xl mb-1"></i>
+                            <span class="text-xs sm:text-sm font-bold text-white">Fair Pricing</span>
+                            <span class="text-[10px] text-slate-400 uppercase">No Hidden Fees</span>
+                        </div>
+                        <div class="bg-slate-800/60 border border-slate-700/60 p-3 rounded-xl text-center flex flex-col items-center justify-center">
+                            <i class="fa-solid fa-hand-holding-hand text-brandGreen-light text-2xl mb-1"></i>
+                            <span class="text-xs sm:text-sm font-bold text-white">Heavy Lifting</span>
+                            <span class="text-[10px] text-slate-400 uppercase">We Do It All</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:5088404362" class="w-full sm:w-auto bg-gradient-to-r from-brandOrange to-orange-600 hover:from-orange-600 hover:to-brandOrange text-white px-8 py-4 rounded-xl font-extrabold text-lg shadow-xl shadow-orange-900/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-phone text-xl animate-bounce"></i>
+                            <span>Call 508-840-4362</span>
+                        </a>
+                        <a href="sms:5088404362" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-comment-dots text-brandGreen-light text-xl"></i>
+                            <span>Text Photo For Quote</span>
+                        </a>
+                    </div>
+
+                    <!-- Location info footer line -->
+                    <div class="text-xs sm:text-sm text-slate-400 pt-2 flex items-center justify-center lg:justify-start gap-2">
+                        <i class="fa-solid fa-location-dot text-brandOrange"></i>
+                        <span>Proudly Serving Worcester, Auburn, Shrewsbury, Holden & Surrounding Towns</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Quick Quote Box -->
+                <div class="lg:col-span-5" id="quote-section">
+                    <div class="bg-white text-slate-900 rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 relative">
+                        <div class="absolute -top-3 right-6 bg-brandGreen text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                            Fast Response
+                        </div>
+                        <h2 class="text-2xl font-black text-slate-900 mb-1">Get Your Free Estimate</h2>
+                        <p class="text-slate-500 text-sm mb-6">Tell us about your cleanup project for an instant estimate.</p>
+
+                        <form id="hero-quote-form" class="space-y-4" onsubmit="handleQuoteSubmit(event)">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Name</label>
+                                <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandGreen font-medium text-sm">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone / Text</label>
+                                    <input type="tel" required placeholder="(508) 000-0000" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandGreen font-medium text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Zip Code</label>
+                                    <input type="text" required placeholder="01604" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandGreen font-medium text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Service Needed</label>
+                                <select required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandGreen font-medium text-sm">
+                                    <option value="">Select Cleanup Service...</option>
+                                    <option value="garage">Garage Cleanout</option>
+                                    <option value="basement">Basement Cleanout</option>
+                                    <option value="attic">Attic Cleanout</option>
+                                    <option value="furniture">Furniture Removal</option>
+                                    <option value="boxes">Boxes & General Clutter</option>
+                                    <option value="mattress">Mattress Disposal</option>
+                                    <option value="full-house">Full House / Property Cleanout</option>
+                                    <option value="other">Other / Custom</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Brief Description</label>
+                                <textarea rows="2" placeholder="e.g. 10 cardboard boxes, old couch, and garage clutter..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandGreen font-medium text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brandGreen hover:bg-brandGreen-dark text-white font-extrabold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all text-base uppercase tracking-wider flex items-center justify-center gap-2">
+                                <span>Get Free Estimate Now</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </form>
+
+                        <div id="form-success-msg" class="hidden text-center py-6">
+                            <div class="w-16 h-16 bg-green-100 text-brandGreen rounded-full flex items-center justify-center text-3xl mx-auto mb-3">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900">Request Received!</h3>
+                            <p class="text-slate-600 text-sm mt-1">We will text or call you back within 15 minutes.</p>
+                            <a href="tel:5088404362" class="mt-4 inline-block bg-brandOrange text-white font-bold px-6 py-2.5 rounded-xl text-sm">
+                                Or Call Directly: 508-840-4362
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Before & After Transformation Section -->
+    <section id="transformation" class="py-16 md:py-24 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brandGreen font-extrabold text-xs uppercase tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full">Real Results</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
+                    See The Transformation
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg mt-2">
+                    Drag the slider back and forth to see how we transform cluttered garages, basements, and homes into pristine, usable spaces.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Comparison Container -->
+                <div class="before-after-container rounded-3xl shadow-2xl border-4 border-slate-900 overflow-hidden h-[380px] sm:h-[480px] md:h-[540px] relative cursor-ew-resize" id="comparison-slider">
+                    
+                    <!-- After Image (Clean Garage) -->
+                    <img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1600&q=80" 
+                         alt="Garage After Cleanout - Clean and Empty" 
+                         class="img-after select-none pointer-events-none">
+                    <div class="absolute bottom-4 right-4 bg-brandGreen text-white font-black px-4 py-1.5 rounded-xl text-sm shadow-md z-10 flex items-center gap-1.5 uppercase">
+                        <i class="fa-solid fa-sparkles text-amber-300"></i> AFTER
+                    </div>
+
+                    <!-- Before Image (Cluttered Garage) -->
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80" 
+                         alt="Garage Before Cleanout - Boxes and Clutter" 
+                         class="img-before select-none pointer-events-none">
+                    <div class="absolute bottom-4 left-4 bg-brandOrange text-white font-black px-4 py-1.5 rounded-xl text-sm shadow-md z-10 flex items-center gap-1.5 uppercase">
+                        <i class="fa-solid fa-boxes-packing"></i> BEFORE
+                    </div>
+
+                    <!-- Divider & Handle -->
+                    <div class="slider-divider"></div>
+                    <div class="slider-handle">
+                        <i class="fa-solid fa-arrows-left-right text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Instructional Tip -->
+                <p class="text-center text-xs sm:text-sm text-slate-500 mt-4 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-hand-pointer text-brandOrange"></i> Drag or hover slider left/right to compare
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Provided Section -->
+    <section id="services" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brandOrange font-extrabold text-xs uppercase tracking-widest bg-orange-50 border border-orange-200 px-3 py-1 rounded-full">Our Core Specialties</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
+                    What We Remove & Clean Out
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg mt-2">
+                    No job is too big or small! From single-item furniture pick-ups to complete property cleanouts.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Service 1: Furniture -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-emerald-100 text-brandGreen rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-couch"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Furniture Removal</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Sofas, couches, sectionals, recliners, dressers, dining sets, desks, and heavy wood furniture loaded and removed safely.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGreen"></i> Couches & Armchairs</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGreen"></i> Tables & Cabinets</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGreen"></i> Entertainment Centers</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Boxes & Clutter -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-orange-100 text-brandOrange rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Boxes & Clutter</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Piles of old cardboard boxes, unused household items, paper, clothes, and general miscellaneous junk hauling.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Storage Boxes</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Trash Bags & Debris</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Miscellaneous Items</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Mattresses -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-emerald-100 text-brandGreen rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bed"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Mattresses & Bedding</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Eco-friendly mattress disposal and box spring recycling. We haul away all bed sizes hassle-free.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGreen"></i> King, Queen & Twin Mattresses</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGreen"></i> Box Springs & Frames</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandGreen"></i> Proper Recycling</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4: Garage, Basement & Attic Cleanouts -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-orange-100 text-brandOrange rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-warehouse"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Garage, Basement & Attic</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Full space cleanouts to make room for your vehicles or winter storage. We sweep up when done!
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Complete Garage Overhauls</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Damp Basement Cleanouts</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandOrange"></i> Attic Space Clearing</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Additional items badge callout -->
+            <div class="mt-12 bg-slate-900 rounded-2xl p-6 text-white text-center sm:flex items-center justify-between gap-6">
+                <div class="text-left mb-4 sm:mb-0">
+                    <div class="font-bold text-lg">Have appliances, yard debris, or unique items?</div>
+                    <p class="text-slate-400 text-sm">We handle appliances, scrap metal, outdoor debris, and estate cleanouts too.</p>
+                </div>
+                <a href="tel:5088404362" class="whitespace-nowrap bg-brandOrange hover:bg-brandOrange-hover text-white font-extrabold px-6 py-3 rounded-xl transition-all">
+                    Ask Us: 508-840-4362
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Value Proposition Section -->
+    <section id="why-us" class="py-16 md:py-24 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div>
+                    <span class="text-brandGreen font-extrabold text-xs uppercase tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full">The All Clean Difference</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
+                        Why Worcester Homeowners Trust All Clean Junk Removal
+                    </h2>
+                    <p class="text-slate-600 text-base mt-4 leading-relaxed">
+                        Getting your home ready for winter or freeing up valuable space shouldn't be stressful or expensive. We take care of every aspect of the removal process from start to finish.
+                    </p>
+
+                    <div class="mt-8 space-y-6">
+                        <!-- Feature 1 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-emerald-100 text-brandGreen rounded-xl flex-shrink-0 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900">Same-Day & Fast Service</h3>
+                                <p class="text-slate-600 text-sm mt-1">
+                                    Need it gone today? We offer flexible scheduling and rapid same-day response times for urgent cleanout needs.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-orange-100 text-brandOrange rounded-xl flex-shrink-0 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900">Fair & Transparent Pricing</h3>
+                                <p class="text-slate-600 text-sm mt-1">
+                                    No hidden fees or unexpected charges. You get a clear upfront estimate based on truck volume and labor.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-emerald-100 text-brandGreen rounded-xl flex-shrink-0 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-dumbbell"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900">We Do ALL The Heavy Lifting</h3>
+                                <p class="text-slate-600 text-sm mt-1">
+                                    Don't strain your back! You point to what needs to go, and our strong, courteous crew carries it out of your home.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Callout Card -->
+                <div class="bg-gradient-to-br from-brandDark to-slate-900 rounded-3xl p-8 text-white relative shadow-2xl border border-slate-800">
+                    <div class="text-center space-y-6">
+                        <div class="w-20 h-20 bg-brandOrange/20 text-brandOrange border border-brandOrange/30 rounded-full flex items-center justify-center text-4xl mx-auto">
+                            <i class="fa-solid fa-snowflake"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-black uppercase tracking-tight">
+                            Winter Is Coming! <br />
+                            <span class="text-brandGreen-light">Park Your Car In The Garage Again</span>
+                        </h3>
+
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Don't scrape ice and snow off your vehicle all winter long because your garage is packed with old boxes, furniture, and clutter. Call us today and reclaim your garage in just a few hours!
+                        </p>
+
+                        <div class="p-4 bg-slate-800/80 rounded-2xl border border-slate-700 text-left">
+                            <div class="text-xs text-brandOrange font-bold uppercase tracking-wider mb-1">Direct Line & SMS</div>
+                            <a href="tel:5088404362" class="text-2xl sm:text-3xl font-black text-white hover:text-brandOrange transition-colors block">
+                                508-840-4362
+                            </a>
+                            <p class="text-xs text-slate-400 mt-1">Send us a photo of your junk via text for a fast photo estimate!</p>
+                        </div>
+
+                        <div class="flex justify-center gap-4 text-xs text-slate-400 font-medium">
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-shield-halved text-brandGreen-light"></i> Licensed & Insured</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-recycle text-brandGreen-light"></i> Eco-Friendly Disposal</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Coverage Section -->
+    <section id="coverage" class="py-16 bg-slate-900 text-white border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-brandOrange font-extrabold text-xs uppercase tracking-widest bg-slate-800 px-3 py-1 rounded-full border border-slate-700">Service Coverage</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-3">
+                    Serving Worcester & Surrounding Areas
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">
+                    Check if we service your city or ZIP code below!
+                </p>
+            </div>
+
+            <!-- Zip Code Interactive Checker -->
+            <div class="max-w-md mx-auto mb-10">
+                <div class="flex gap-2 bg-slate-800 p-2 rounded-2xl border border-slate-700 shadow-inner">
+                    <input type="text" id="zip-input" placeholder="Enter ZIP code (e.g. 01604)" class="w-full bg-slate-900 text-white px-4 py-3 rounded-xl border border-slate-700 focus:outline-none focus:border-brandGreen text-sm">
+                    <button onclick="checkZipCode()" class="bg-brandGreen hover:bg-brandGreen-dark text-white font-bold px-5 py-3 rounded-xl text-sm whitespace-nowrap transition-colors">
+                        Check Area
+                    </button>
+                </div>
+                <div id="zip-result" class="mt-3 text-center text-sm font-semibold hidden"></div>
+            </div>
+
+            <!-- Major Towns Served Badges -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-4xl mx-auto">
+                <span class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-xl text-sm font-bold text-slate-200"><i class="fa-solid fa-location-dot text-brandOrange mr-1.5"></i>Worcester</span>
+                <span class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-xl text-sm font-bold text-slate-200"><i class="fa-solid fa-location-dot text-brandOrange mr-1.5"></i>Auburn</span>
+                <span class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-xl text-sm font-bold text-slate-200"><i class="fa-solid fa-location-dot text-brandOrange mr-1.5"></i>Shrewsbury</span>
+                <span class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-xl text-sm font-bold text-slate-200"><i class="fa-solid fa-location-dot text-brandOrange mr-1.5"></i>Holden</span>
+                <span class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-xl text-sm font-bold text-slate-200"><i class="fa-solid fa-location-dot text-brandOrange mr-1.5"></i>Millbury</span>
+                <span class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-xl text-sm font-bold text-slate-200"><i class="fa-solid fa-location-dot text-brandOrange mr-1.5"></i>Westborough</span>
+                <span class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-xl text-sm font-bold text-slate-200"><i class="fa-solid fa-location-dot text-brandOrange mr-1.5"></i>Grafton</span>
+                <span class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-xl text-sm font-bold text-slate-200"><i class="fa-solid fa-location-dot text-brandOrange mr-1.5"></i>Leicester</span>
+                <span class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-xl text-sm font-bold text-slate-200"><i class="fa-solid fa-location-dot text-brandOrange mr-1.5"></i>Boylston</span>
+                <span class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-xl text-sm font-bold text-slate-200"><i class="fa-solid fa-location-dot text-brandOrange mr-1.5"></i>Paxton</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews / Testimonials Section -->
+    <section id="reviews" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brandGreen font-extrabold text-xs uppercase tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full">Customer Reviews</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
+                    What Our Neighbors Say
+                </h2>
+                <div class="flex justify-center items-center gap-1 text-amber-400 mt-3 text-lg">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="text-slate-800 font-bold text-sm ml-2">5.0 Star Rating in Worcester Area</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="text-amber-400 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic mb-4">
+                            "Called All Clean to clear out our garage before winter hit. They showed up the same afternoon, gave a super fair price, and did all the heavy lifting. I can finally park my car inside!"
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-3 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-slate-900 text-sm">Dave M.</div>
+                            <div class="text-xs text-slate-400">Worcester, MA</div>
+                        </div>
+                        <span class="text-xs bg-green-100 text-brandGreen font-bold px-2 py-0.5 rounded">Garage Cleanout</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="text-amber-400 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic mb-4">
+                            "Extremely polite and efficient crew. I texted them photos of an old sectional sofa and several heavy storage boxes in our basement, and they were gone in less than an hour!"
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-3 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-slate-900 text-sm">Sarah L.</div>
+                            <div class="text-xs text-slate-400">Shrewsbury, MA</div>
+                        </div>
+                        <span class="text-xs bg-orange-100 text-brandOrange font-bold px-2 py-0.5 rounded">Furniture Removal</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="text-amber-400 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic mb-4">
+                            "Fair pricing and honest people. They swept up the garage floor after removing all the junk. Will definitely recommend them to anyone in the area."
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-3 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-slate-900 text-sm">Robert K.</div>
+                            <div class="text-xs text-slate-400">Auburn, MA</div>
+                        </div>
+                        <span class="text-xs bg-green-100 text-brandGreen font-bold px-2 py-0.5 rounded">Attic Cleanout</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-To-Action Banner -->
+    <section class="bg-gradient-to-r from-brandGreen to-brandGreen-dark py-12 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:flex items-center justify-between">
+            <div class="text-left mb-6 sm:mb-0">
+                <h3 class="text-2xl sm:text-3xl font-black uppercase">Ready To Clean Out The Clutter?</h3>
+                <p class="text-green-100 text-sm mt-1">Get your free quote or schedule a same-day pickup now.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a href="tel:5088404362" class="bg-brandOrange hover:bg-brandOrange-hover text-white px-8 py-3.5 rounded-xl font-extrabold text-lg shadow-lg transition-all text-center">
+                    <i class="fa-solid fa-phone mr-2"></i> 508-840-4362
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 text-sm border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="text-white font-black text-xl uppercase tracking-tight mb-3">
+                        ALL CLEAN <span class="text-brandOrange">JUNK REMOVAL</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Professional, reliable junk removal service serving Worcester and surrounding communities. Junk removal for a cleaner, safer home.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-3 uppercase text-xs tracking-wider">Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li>• Furniture Removal & Hauling</li>
+                        <li>• Boxes & Clutter Removal</li>
+                        <li>• Mattress Disposal</li>
+                        <li>• Garage, Basement & Attic Cleanouts</li>
+                        <li>• Estate & Household Cleanouts</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-3 uppercase text-xs tracking-wider">Contact Us</h4>
+                    <div class="space-y-2 text-xs">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-brandOrange"></i>
+                            <a href="tel:5088404362" class="text-white hover:underline font-bold">508-840-4362</a> (Call or Text)
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-brandGreen-light"></i>
+                            <span>Worcester, MA & Surrounding Areas</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-slate-400"></i>
+                            <span>Open Daily: 7:00 AM - 8:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-900 pt-6 text-center text-xs text-slate-500">
+                &copy; <span id="year"></span> All Clean Junk Removal. All Rights Reserved. Serving Worcester, MA.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Fixed Call Bar for High Conversion -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur border-t border-slate-800 p-3 z-50 flex gap-2">
+        <a href="tel:5088404362" class="flex-1 bg-brandOrange text-white font-extrabold text-sm py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform">
+            <i class="fa-solid fa-phone"></i> Call 508-840-4362
+        </a>
+        <a href="sms:5088404362" class="flex-1 bg-brandGreen text-white font-extrabold text-sm py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform">
+            <i class="fa-solid fa-comment-sms"></i> Text Photos
+        </a>
+    </div>
+
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark';
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars';
+            });
+        });
+
+        // Interactive Before & After Comparison Slider Logic
+        const sliderContainer = document.getElementById('comparison-slider');
+        if (sliderContainer) {
+            let isDragging = false;
+
+            const updateSliderPos = (clientX) => {
+                const rect = sliderContainer.getBoundingClientRect();
+                let x = clientX - rect.left;
+                if (x < 0) x = 0;
+                if (x > rect.width) x = rect.width;
+                const percentage = (x / rect.width) * 100;
+                sliderContainer.style.setProperty('--slider-pos', `${percentage}%`);
+            };
+
+            sliderContainer.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                updateSliderPos(e.clientX);
+            });
+
+            window.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                updateSliderPos(e.clientX);
+            });
+
+            // Touch support for mobile devices
+            sliderContainer.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                if (e.touches[0]) updateSliderPos(e.touches[0].clientX);
+            });
+
+            window.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+
+            window.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                if (e.touches[0]) updateSliderPos(e.touches[0].clientX);
+            });
+        }
+
+        // Form Submit Handler
+        function handleQuoteSubmit(e) {
+            e.preventDefault();
+            document.getElementById('hero-quote-form').classList.add('hidden');
+            document.getElementById('form-success-msg').classList.remove('hidden');
+        }
+
+        // Zip Code Checker
+        const validZips = ['01601','01602','01603','01604','01605','01606','01607','01608','01609','01610','01501','01545','01520','01527','01581','01519','01524','01505','01542'];
+
+        function checkZipCode() {
+            const input = document.getElementById('zip-input').value.trim();
+            const resultDiv = document.getElementById('zip-result');
+
+            if (!input || input.length < 5) {
+                resultDiv.className = "mt-3 text-center text-sm font-semibold text-amber-400 block";
+                resultDiv.innerHTML = "<i class='fa-solid fa-circle-exclamation mr-1'></i> Please enter a valid 5-digit ZIP code.";
+                return;
+            }
+
+            if (validZips.includes(input) || input.startsWith('016') || input.startsWith('015')) {
+                resultDiv.className = "mt-3 text-center text-sm font-semibold text-brandGreen-light block";
+                resultDiv.innerHTML = `<i class='fa-solid fa-circle-check mr-1'></i> Great news! ZIP code <strong>${input}</strong> is in our primary service area. Call 508-840-4362!`;
+            } else {
+                resultDiv.className = "mt-3 text-center text-sm font-semibold text-brandOrange-light block";
+                resultDiv.innerHTML = `<i class='fa-solid fa-truck-fast mr-1'></i> We frequently service ZIP <strong>${input}</strong>! Call us at 508-840-4362 to confirm.`;
+            }
+        }
+    </script>
+</body>
+</html>
